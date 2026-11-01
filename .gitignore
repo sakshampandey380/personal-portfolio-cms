@@ -1,0 +1,12 @@
+# Environment & Local Secret Files (Never commit credentials)
+.env
+.env.local
+.env.*.local
+js/config.js
+
+# OS & Editor Artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

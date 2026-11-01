@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <rect width="800" height="480" fill="#F3EFEA"/>
+  <rect x="85" y="65" width="630" height="350" rx="16" fill="#FFFFFF" stroke="#16161A" stroke-opacity="0.12" stroke-width="2"/>
+  <text x="125" y="112" fill="#4F46E5" font-family="monospace" font-size="13" font-weight="700">SPATIAL WEBGL &amp; DESIGN SYSTEM ARCHITECTURE</text>
+  <g transform="translate(400, 250)">
+    <polygon points="0,-95 90,-45 90,45 0,95 -90,45 -90,-45" fill="#FAF8F5" stroke="#F28C28" stroke-width="3"/>
+    <polygon points="0,-95 90,-45 0,5 -90,-45" fill="#F28C28" fill-opacity="0.18"/>
+    <line x1="0" y1="5" x2="0" y2="95" stroke="#F28C28" stroke-width="2.5"/>
+    <circle cx="0" cy="5" r="6" fill="#16161A"/>
+  </g>
+  <rect x="125" y="155" width="155" height="75" rx="8" fill="#FAF8F5" stroke="#16161A" stroke-opacity="0.12"/>
+  <text x="142" y="185" fill="#16161A" font-family="sans-serif" font-weight="700" font-size="12">60fps Shader Loop</text>
+  <text x="142" y="206" fill="#767682" font-family="monospace" font-size="10">Zero-GC Frame Buffer</text>
+  <rect x="520" y="260" width="155" height="75" rx="8" fill="#FAF8F5" stroke="#16161A" stroke-opacity="0.12"/>
+  <text x="537" y="290" fill="#16161A" font-family="sans-serif" font-weight="700" font-size="12">WCAG AA Tokens</text>
+  <text x="537" y="311" fill="#767682" font-family="monospace" font-size="10">Strict Type Contracts</text>
+</svg>

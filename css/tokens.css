@@ -1,0 +1,151 @@
+/* ==========================================================================
+   DESIGN TOKENS — SAKSHAM PANDEY | NEXVORA TECHNOLOGIES
+   Predominantly warm pearl/alabaster light theme with charcoal typography,
+   signature #F28C28 warm orange accent, dimensional shadows, and 3D depth.
+   ========================================================================== */
+
+:root {
+  /* --- Color Palette: Light Theme (Default) --- */
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #F3EFEA;
+  --bg-tertiary: #EAE4DC;
+  --bg-elevated: rgba(255, 255, 255, 0.86);
+  --bg-glass: rgba(255, 253, 250, 0.72);
+  --bg-glass-strong: rgba(255, 253, 250, 0.92);
+  --bg-code: #1E1E24;
+
+  /* --- Typography Colors --- */
+  --text-primary: #16161A;
+  --text-secondary: #4A4A52;
+  --text-muted: #767682;
+  --text-on-accent: #FFFFFF;
+  --text-inverse: #FAF8F5;
+
+  /* --- Brand Accents --- */
+  --accent-primary: #F28C28;
+  --accent-primary-hover: #E07812;
+  --accent-primary-soft: rgba(242, 140, 40, 0.12);
+  --accent-primary-glow: rgba(242, 140, 40, 0.28);
+  --accent-secondary: #4F46E5;
+  --accent-secondary-soft: rgba(79, 70, 229, 0.1);
+  --accent-cyan: #0891B2;
+  --accent-cyan-soft: rgba(8, 145, 178, 0.1);
+
+  /* --- Semantic Status Colors --- */
+  --status-success: #15803D;
+  --status-success-bg: rgba(21, 128, 61, 0.1);
+  --status-warning: #B45309;
+  --status-warning-bg: rgba(180, 83, 9, 0.12);
+  --status-danger: #DC2626;
+  --status-danger-bg: rgba(220, 38, 38, 0.1);
+  --status-info: #0369A1;
+  --status-info-bg: rgba(3, 105, 161, 0.1);
+
+  /* --- Borders & Dividers --- */
+  --border-subtle: rgba(22, 22, 26, 0.08);
+  --border-medium: rgba(22, 22, 26, 0.14);
+  --border-strong: rgba(22, 22, 26, 0.24);
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-accent: rgba(242, 140, 40, 0.45);
+
+  /* --- Dimensional Shadows & Lighting --- */
+  --shadow-xs: 0 2px 6px rgba(22, 22, 26, 0.04);
+  --shadow-sm: 0 6px 16px -4px rgba(22, 22, 26, 0.06), 0 2px 6px -1px rgba(22, 22, 26, 0.04);
+  --shadow-md: 0 14px 32px -8px rgba(22, 22, 26, 0.08), 0 4px 12px -2px rgba(22, 22, 26, 0.04);
+  --shadow-lg: 0 24px 56px -12px rgba(22, 22, 26, 0.12), 0 8px 20px -4px rgba(22, 22, 26, 0.05);
+  --shadow-3d: 0 28px 64px -16px rgba(22, 22, 26, 0.15), 0 12px 24px -6px rgba(242, 140, 40, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --shadow-accent: 0 12px 28px -6px rgba(242, 140, 40, 0.35);
+
+  /* --- Glass & Surface Effects --- */
+  --blur-glass: blur(16px);
+  --blur-heavy: blur(28px);
+  --surface-specular: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(242, 140, 40, 0.1), transparent 40%);
+
+  /* --- Typography Scale --- */
+  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.06rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  --text-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.85rem);
+  --text-4xl: clamp(2.5rem, 2rem + 2.5vw, 4.25rem);
+
+  /* --- Spacing Scale --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* --- Border Radii (Architectural & Crisp, Not Over-Rounded) --- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 9999px;
+
+  /* --- 3D & Motion Parameters --- */
+  --perspective-main: 1200px;
+  --perspective-deep: 1800px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 320ms;
+  --duration-slow: 600ms;
+
+  /* --- Layout & Containers --- */
+  --container-max: 1280px;
+  --container-narrow: 920px;
+  --header-height: 76px;
+
+  /* --- Z-Index Scale --- */
+  --z-bg-canvas: 0;
+  --z-decor: 1;
+  --z-content: 10;
+  --z-floating-cta: 80;
+  --z-header: 100;
+  --z-modal: 200;
+  --z-intro: 500;
+  --z-toast: 600;
+}
+
+/* --- Optional Refined Dark Theme --- */
+[data-theme="dark"] {
+  --bg-primary: #0F1014;
+  --bg-secondary: #16181F;
+  --bg-tertiary: #1F222B;
+  --bg-elevated: rgba(26, 29, 38, 0.88);
+  --bg-glass: rgba(22, 24, 31, 0.75);
+  --bg-glass-strong: rgba(22, 24, 31, 0.94);
+
+  --text-primary: #F5F5F7;
+  --text-secondary: #B8B8C4;
+  --text-muted: #7E808F;
+  --text-inverse: #16161A;
+
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-medium: rgba(255, 255, 255, 0.13);
+  --border-strong: rgba(255, 255, 255, 0.24);
+  --border-glass: rgba(255, 255, 255, 0.1);
+
+  --shadow-xs: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 6px 16px -4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 14px 32px -8px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 56px -12px rgba(0, 0, 0, 0.65);
+  --shadow-3d: 0 28px 64px -16px rgba(0, 0, 0, 0.7), 0 12px 24px -6px rgba(242, 140, 40, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}

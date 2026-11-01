@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Authentication | Saksham Pandey · NEXVORA CMS</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+  <div class="auth-screen">
+    <!-- Left Architectural Showcase Panel -->
+    <aside class="auth-showcase">
+      <div>
+        <a href="../index.html" class="brand-logo" style="color:#FFFFFF;">
+          <span class="brand-logo__cube">SP</span>
+          <span class="brand-logo__meta">
+            <span>Saksham Pandey</span>
+            <span class="brand-logo__sub" style="color:#A1A1AA;">NEXVORA TECHNOLOGIES // CMS</span>
+          </span>
+        </a>
+      </div>
+
+      <div style="max-width:500px;">
+        <span class="badge badge--accent" style="margin-bottom:1rem;">HEADLESS PORTFOLIO &amp; CV ENGINE</span>
+        <h1 style="color:#FFFFFF;font-size:2.5rem;margin-bottom:1rem;">
+          Studio Content Management System
+        </h1>
+        <p style="color:#B8B8C4;font-size:1rem;line-height:1.65;">
+          Manage your profile, 3D hero configuration, project case studies, skill constellation, multiple PDF resumes, and WhatsApp routing with real-time persistence.
+        </p>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.12);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:#9CA3AF;">
+        <span>Security: Supabase JWT + Row-Level Security (RLS)</span>
+        <a href="../index.html" style="color:#F28C28;font-weight:600;">← Return to Public Website</a>
+      </div>
+    </aside>
+
+    <!-- Right Authentication Panel -->
+    <main class="auth-panel">
+      <div class="auth-card">
+        <div style="margin-bottom:1.5rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+            <span id="authModeBadge" class="badge badge--accent">Restricted Owner Access</span>
+            <a href="../index.html" style="font-size:0.8rem;color:var(--text-secondary);">Public Site ↗</a>
+          </div>
+          <h2 style="font-size:1.65rem;margin-bottom:0.25rem;">Administrator Sign In</h2>
+          <p id="authSubtitle" style="font-size:0.88rem;color:var(--text-secondary);">
+            Enter your exclusive Owner ID and Password to unlock the 20-module NexVora Admin Dashboard.
+          </p>
+        </div>
+
+        <div id="authAlertBox"
+             role="alert"
+             style="display:none;padding:0.75rem 1rem;border-radius:var(--radius-sm);font-size:0.85rem;margin-bottom:1rem;">
+        </div>
+
+        <!-- Strict Owner Login Form -->
+        <form id="supabaseLoginForm" novalidate>
+          <div class="form-group">
+            <label for="adminEmail" class="form-label">Administrator ID (Email Address)</label>
+            <input type="email"
+                   id="adminEmail"
+                   class="form-input"
+                   placeholder="Enter your administrator email"
+                   required
+                   autocomplete="username" />
+          </div>
+
+          <div class="form-group">
+            <label for="adminPassword" class="form-label">Administrator Password</label>
+            <input type="password"
+                   id="adminPassword"
+                   class="form-input"
+                   placeholder="••••••••••••"
+                   required
+                   autocomplete="current-password" />
+          </div>
+
+          <button type="submit" id="supabaseLoginBtn" class="btn btn--primary" style="width:100%;margin-top:0.5rem;">
+            Unlock NexVora Admin CMS
+          </button>
+        </form>
+
+        <!-- Collapsible Backend Connection Setup -->
+        <details style="margin-top:1.5rem;border-top:1px solid var(--border-subtle);padding-top:1rem;">
+          <summary style="font-size:0.82rem;font-weight:600;cursor:pointer;color:var(--text-secondary);">
+            Advanced: Supabase Cloud Database Connection
+          </summary>
+          <div style="margin-top:1rem;display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="form-group" style="margin:0;">
+              <label for="cfgSupabaseUrl" class="form-label">Supabase Project URL</label>
+              <input type="url"
+                     id="cfgSupabaseUrl"
+                     class="form-input"
+                     placeholder="https://xyzcompany.supabase.co" />
+            </div>
+            <div class="form-group" style="margin:0;">
+              <label for="cfgSupabaseKey" class="form-label">Supabase Public Anon Key (Never use service_role)</label>
+              <input type="text"
+                     id="cfgSupabaseKey"
+                     class="form-input"
+                     placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI..." />
+            </div>
+            <div style="display:flex;gap:0.5rem;">
+              <button type="button" id="saveBackendConfigBtn" class="btn btn--primary btn--sm">
+                Save Connection
+              </button>
+              <button type="button" id="clearBackendConfigBtn" class="btn btn--ghost btn--sm">
+                Disconnect Cloud
+              </button>
+            </div>
+          </div>
+        </details>
+      </div>
+    </main>
+  </div>
+
+  <script defer src="js/login-bundle.js"></script>
+</body>
+</html>

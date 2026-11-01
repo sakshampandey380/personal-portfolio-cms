@@ -1,0 +1,406 @@
+/* ==========================================================================
+   ADMIN CMS DESIGN SYSTEM — /admin/
+   Clean, modern light studio CMS interface with sidebar, topbar, tables,
+   upload progress, drawers, and responsive controls.
+   ========================================================================== */
+
+.admin-body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Login Page Layout --- */
+.auth-screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  background: var(--bg-primary);
+}
+
+.auth-showcase {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(242, 140, 40, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(79, 70, 229, 0.14), transparent 50%),
+    #14151A;
+  color: #FAF8F5;
+  padding: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  background: var(--bg-primary);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Admin Shell Layout --- */
+.admin-shell {
+  display: grid;
+  grid-template-columns: 272px 1fr;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border-medium);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.admin-sidebar__brand {
+  height: 68px;
+  padding-inline: var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-sidebar__nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-nav-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding: var(--space-3) var(--space-3) var(--space-1);
+}
+
+.admin-nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 0.58rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: left;
+  transition: all var(--duration-fast) ease;
+}
+
+.admin-nav-btn__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.admin-nav-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.admin-nav-btn.is-active {
+  background: var(--accent-primary-soft);
+  color: var(--accent-primary-hover);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .admin-nav-btn.is-active {
+  color: var(--accent-primary);
+}
+
+.admin-sidebar__footer {
+  padding: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* --- Admin Main Workspace --- */
+.admin-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.admin-topbar {
+  height: 68px;
+  background: var(--bg-glass-strong);
+  backdrop-filter: var(--blur-glass);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-inline: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.admin-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.admin-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.admin-content {
+  padding: var(--space-6);
+  max-width: 1360px;
+  width: 100%;
+  margin-inline: auto;
+  flex: 1;
+}
+
+/* --- Stats Grid --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.stat-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stat-card__label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.stat-card__value {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-card__meta {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+/* --- Admin Panels & Tables --- */
+.admin-panel {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  margin-bottom: var(--space-6);
+  overflow: hidden;
+}
+
+.admin-panel__header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.admin-panel__body {
+  padding: var(--space-6);
+}
+
+.admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.admin-table th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0.85rem 1rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background: rgba(242, 140, 40, 0.03);
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* --- Upload Dropzone & Progress --- */
+.upload-zone {
+  border: 2px dashed var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  text-align: center;
+  background: var(--bg-secondary);
+  transition: border-color var(--duration-fast) ease, background-color var(--duration-fast) ease;
+  cursor: pointer;
+}
+
+.upload-zone:hover,
+.upload-zone.is-dragover {
+  border-color: var(--accent-primary);
+  background: var(--accent-primary-soft);
+}
+
+.upload-progress {
+  height: 6px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-top: var(--space-3);
+}
+
+.upload-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-primary);
+  transition: width 0.2s ease;
+}
+
+/* --- Toggle Switch --- */
+.switch-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.switch-wrap input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .auth-screen {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-showcase {
+    display: none;
+  }
+
+  .admin-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform var(--duration-normal) var(--ease-out-expo);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .admin-sidebar.is-open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-panel {
+    padding: var(--space-4);
+  }
+
+  .auth-card {
+    padding: var(--space-5);
+  }
+
+  .admin-topbar {
+    height: auto;
+    min-height: 60px;
+    padding: var(--space-3) var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .admin-content {
+    padding: var(--space-4);
+  }
+
+  .admin-panel__header,
+  .admin-panel__body {
+    padding: var(--space-4);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .stat-card {
+    padding: var(--space-4);
+  }
+}

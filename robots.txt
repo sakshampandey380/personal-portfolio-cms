@@ -1,0 +1,10 @@
+# robots.txt — Saksham Pandey | NEXVORA TECHNOLOGIES
+# Note: robots.txt is for search engine crawler indexing guidance only.
+# Actual access control for /admin/ and data mutations is enforced by
+# Supabase JWT authentication and PostgreSQL Row-Level Security (RLS).
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://sakshampandey.dev/sitemap.xml

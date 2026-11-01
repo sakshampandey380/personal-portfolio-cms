@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard — Saksham Pandey | NEXVORA CMS</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <div class="admin-shell">
+      <!-- Left Sidebar Navigation (All 20 Required Modules) -->
+      <aside
+        id="adminSidebar"
+        class="admin-sidebar"
+        aria-label="CMS Module Navigation"
+      >
+        <div class="admin-sidebar__brand">
+          <a
+            href="../index.html"
+            class="brand-logo"
+            title="View Public Website"
+          >
+            <span class="brand-logo__cube">SP</span>
+            <span class="brand-logo__meta">
+              <span style="font-size: 0.95rem">NEXVORA CMS</span>
+              <span class="brand-logo__sub">SAKSHAM PANDEY</span>
+            </span>
+          </a>
+        </div>
+
+        <nav class="admin-sidebar__nav">
+          <span class="admin-nav-group-label">Core &amp; Identity</span>
+          <button
+            type="button"
+            class="admin-nav-btn is-active"
+            data-admin-module="overview"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>01</span> <span>Dashboard Overview</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="profile"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>02</span> <span>Profile &amp; Personal Info</span></span
+            >
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-module="hero">
+            <span class="admin-nav-btn__left"
+              ><span>03</span> <span>Hero &amp; 3D Stage</span></span
+            >
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-module="about">
+            <span class="admin-nav-btn__left"
+              ><span>04</span> <span>About Section</span></span
+            >
+          </button>
+
+          <span class="admin-nav-group-label">Portfolio Collections</span>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="skills"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>05</span> <span>Skills &amp; Categories</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="experience"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>06</span> <span>Experience</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="education"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>07</span> <span>Education</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="projects"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>08</span> <span>Projects Showcase</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="achievements"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>09</span> <span>Achievements</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="certifications"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>10</span> <span>Certifications</span></span
+            >
+          </button>
+
+          <span class="admin-nav-group-label">Resumes &amp; Assets</span>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="resumes"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>11</span> <span>Multiple Resumes (CVs)</span></span
+            >
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-module="media">
+            <span class="admin-nav-btn__left"
+              ><span>18</span> <span>Media Library</span></span
+            >
+          </button>
+
+          <span class="admin-nav-group-label">Channels &amp; Settings</span>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="social"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>12</span> <span>Social Links</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="contact"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>13</span> <span>Contact &amp; Inbox</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="whatsapp"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>14</span> <span>WhatsApp (wa.me)</span></span
+            >
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-module="theme">
+            <span class="admin-nav-btn__left"
+              ><span>15</span> <span>Theme &amp; Design</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="navigation"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>16</span> <span>Navigation &amp; Visibility</span></span
+            >
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-module="seo">
+            <span class="admin-nav-btn__left"
+              ><span>17</span> <span>SEO &amp; Open Graph</span></span
+            >
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-module="site">
+            <span class="admin-nav-btn__left"
+              ><span>19</span> <span>Site-Wide &amp; Footer</span></span
+            >
+          </button>
+          <button
+            type="button"
+            class="admin-nav-btn"
+            data-admin-module="security"
+          >
+            <span class="admin-nav-btn__left"
+              ><span>20</span> <span>Account &amp; Security</span></span
+            >
+          </button>
+        </nav>
+
+        <div class="admin-sidebar__footer">
+          <div
+            style="
+              font-size: 0.75rem;
+              color: var(--text-muted);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <span id="adminActiveUserEmail" class="mono"
+              >saksham@nexvora.dev</span
+            >
+          </div>
+          <button
+            type="button"
+            id="adminLogoutBtn"
+            class="btn btn--secondary btn--sm"
+            style="width: 100%"
+          >
+            Sign Out of CMS
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main CMS Workspace -->
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-topbar__left">
+            <button
+              type="button"
+              id="adminMobileSidebarToggle"
+              class="btn btn--icon"
+              aria-label="Toggle CMS Sidebar"
+            >
+              ☰
+            </button>
+            <h1 id="adminCurrentModuleTitle" style="font-size: 1.15rem">
+              1. Dashboard Overview
+            </h1>
+            <span
+              id="unsavedChangesIndicator"
+              class="badge badge--accent"
+              style="display: none"
+            >
+              ● Unsaved Edits
+            </span>
+          </div>
+
+          <div class="admin-topbar__right">
+            <span id="adminModeStatusBadge" class="badge badge--accent"
+              >Checking Mode...</span
+            >
+            <button
+              type="button"
+              id="themeToggleBtn"
+              class="btn btn--icon"
+              aria-label="Toggle color theme"
+            >
+              ☾
+            </button>
+            <a
+              href="../index.html"
+              target="_blank"
+              class="btn btn--primary btn--sm"
+            >
+              View Live Portfolio ↗
+            </a>
+          </div>
+        </header>
+
+        <main id="adminModuleWorkspace" class="admin-content">
+          <!-- Active CMS module rendered dynamically -->
+        </main>
+      </div>
+    </div>
+
+    <!-- Accessible Confirmation Modal Dialog -->
+    <div
+      id="adminConfirmModal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="adminConfirmTitle"
+    >
+      <div class="modal-dialog" style="max-width: 440px">
+        <div class="modal-header">
+          <h3 id="adminConfirmTitle" style="font-size: 1.1rem">
+            Confirm Action
+          </h3>
+        </div>
+        <div class="modal-body">
+          <p id="adminConfirmMessage" style="color: var(--text-primary)">
+            Are you sure you want to proceed?
+          </p>
+        </div>
+        <div class="modal-footer" style="justify-content: flex-end">
+          <button
+            type="button"
+            id="adminConfirmCancelBtn"
+            class="btn btn--secondary btn--sm"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            id="adminConfirmProceedBtn"
+            class="btn btn--primary btn--sm"
+            style="background: var(--status-danger)"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script defer src="js/admin-bundle.js"></script>
+  </body>
+</html>
