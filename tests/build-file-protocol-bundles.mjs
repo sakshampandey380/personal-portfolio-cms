@@ -53,8 +53,8 @@ function buildPublicBundle() {
  * Works identically on file:// and http(s):// without CORS module errors.
  */
 (function () {
-  if (window.__NEXVORA_PUBLIC_RUNTIME_LOADED__) return;
-  window.__NEXVORA_PUBLIC_RUNTIME_LOADED__ = true;
+  if (window.__OQTRIVA_PUBLIC_RUNTIME_LOADED__) return;
+  window.__OQTRIVA_PUBLIC_RUNTIME_LOADED__ = true;
 
 ${chunks.join('\n\n')}
 })();
@@ -111,8 +111,8 @@ function buildAdminBundle() {
  * AUTO-GENERATED FILE-PROTOCOL SAFE ADMIN CMS BUNDLE
  */
 (function () {
-  if (window.__NEXVORA_ADMIN_RUNTIME_LOADED__) return;
-  window.__NEXVORA_ADMIN_RUNTIME_LOADED__ = true;
+  if (window.__OQTRIVA_ADMIN_RUNTIME_LOADED__) return;
+  window.__OQTRIVA_ADMIN_RUNTIME_LOADED__ = true;
 
 ${chunks.join('\n\n')}
 })();
@@ -200,7 +200,7 @@ function buildLoginBundle() {
         setAlert(err.message || 'Access Denied: Invalid Administrator ID or Password.', true);
       } finally {
         loginBtn.disabled = false;
-        loginBtn.textContent = 'Unlock NexVora Admin CMS';
+        loginBtn.textContent = 'Unlock Oqtriva Admin CMS';
       }
     });
 
@@ -229,8 +229,8 @@ function buildLoginBundle() {
  * AUTO-GENERATED FILE-PROTOCOL SAFE LOGIN BUNDLE
  */
 (function () {
-  if (window.__NEXVORA_LOGIN_RUNTIME_LOADED__) return;
-  window.__NEXVORA_LOGIN_RUNTIME_LOADED__ = true;
+  if (window.__OQTRIVA_LOGIN_RUNTIME_LOADED__) return;
+  window.__OQTRIVA_LOGIN_RUNTIME_LOADED__ = true;
 
 ${chunks.join('\n\n')}
 

@@ -1,5 +1,5 @@
 -- ==========================================================================
--- ROW-LEVEL SECURITY (RLS) POLICIES — SAKSHAM PANDEY | NEXVORA TECHNOLOGIES
+-- ROW-LEVEL SECURITY (RLS) POLICIES — SAKSHAM PANDEY | OQTRIVA
 -- ==========================================================================
 -- Security Architecture:
 -- 1. Public visitors (anon) can ONLY read published records (`published = true`).

@@ -75,7 +75,7 @@ export class Ambient3DBackground {
   }
 
   seedParticles() {
-    const glyphs = ['</>', '{ }', '01', 'λ', '::', '[]', 'NV', '◈'];
+    const glyphs = ['</>', '{ }', '01', 'λ', '::', '[]', 'OQ', '◈'];
     const count = window.innerWidth < 768 ? 16 : 28;
     this.particles = Array.from({ length: count }, (_, i) => ({
       x: Math.random() * this.width,
@@ -85,16 +85,16 @@ export class Ambient3DBackground {
       vy: (Math.random() - 0.5) * 0.32,
       glyph: i % 3 === 0 ? glyphs[i % glyphs.length] : null,
       size: 2 + Math.random() * 2.5,
-      accent: i % 4 === 0 ? '#1A75FF' : '#F28C28'
+      accent: i % 4 === 0 ? '#1A75FF' : '#4CC9FF'
     }));
   }
 
   seedCodeStreams() {
     const snippets = [
-      '> nexvora.engine.init({ mode: "3D-WebGL", fps: 60 })',
+      '> oqtriva.engine.init({ mode: "3D-WebGL", fps: 60 })',
       '> fastapi.post("/v1/events/ingest") -> 202 Accepted',
       '> rag.hybridSearch({ index: "pgvector", topK: 6 })',
-      '> wsHub.broadcast("room:nexvora", crdt.patch)',
+      '> wsHub.broadcast("room:oqtriva", crdt.patch)',
       '> vercel.edge.route({ status: "optimal", region: "global" })',
       '> saksham.stack = ["React", "TypeScript", "Python", "FastAPI", "Node.js"]'
     ];

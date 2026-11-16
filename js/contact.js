@@ -33,7 +33,7 @@ export class ContactController {
     if (headingEl && contactSettings.heading) headingEl.textContent = contactSettings.heading;
     if (subheadingEl && contactSettings.subheading) subheadingEl.textContent = contactSettings.subheading;
     if (emailEl) {
-      const addr = contactSettings.recipient_email || profile.email || 'contact@nexvora.dev';
+      const addr = contactSettings.recipient_email || profile.email || 'contact@oqtriva.dev';
       emailEl.textContent = addr;
       emailEl.href = `mailto:${addr}`;
     }

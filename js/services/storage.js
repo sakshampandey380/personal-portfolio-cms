@@ -16,7 +16,7 @@ import { apiService } from './api.js';
 import { authService } from './auth.js';
 import { slugify, uid } from '../utils.js';
 
-const IDB_NAME = 'nexvora_media_blob_db_v1';
+const IDB_NAME = 'oqtriva_media_blob_db_v1';
 const IDB_STORE = 'files';
 
 const ALLOWED_PDF_TYPES = ['application/pdf'];

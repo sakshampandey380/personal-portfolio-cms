@@ -157,7 +157,7 @@ export class SkillsController {
           Domain // ${escapeHtml(skill.category)}
         </p>
         <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;overflow-wrap:break-word;">
-          ${escapeHtml(skill.description || 'Core technology in Saksham Pandey’s NexVora engineering stack.')}
+          ${escapeHtml(skill.description || 'Core technology in Saksham Pandey’s Oqtriva engineering stack.')}
         </p>
       </div>
       <div style="min-width:0;">
@@ -169,7 +169,7 @@ export class SkillsController {
             ? `<div class="tag-list">${related
                 .map((r) => `<a href="projects.html" class="tech-tag" style="border-color:var(--border-accent);">${escapeHtml(r)}</a>`)
                 .join('')}</div>`
-            : `<span style="font-size:0.8rem;color:var(--text-muted);">Applied across NexVora full-stack architecture</span>`
+            : `<span style="font-size:0.8rem;color:var(--text-muted);">Applied across Oqtriva full-stack architecture</span>`
         }
       </div>
     `;

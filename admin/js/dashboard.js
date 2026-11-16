@@ -180,7 +180,7 @@ export function renderDashboardOverview(container, state, switchModule) {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `nexvora_portfolio_backup_${new Date().toISOString().split('T')[0]}.json`;
+      a.download = `oqtriva_portfolio_backup_${new Date().toISOString().split('T')[0]}.json`;
       a.click();
       URL.revokeObjectURL(url);
       showToast('Exported portfolio JSON backup', 'success');

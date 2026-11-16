@@ -6,7 +6,7 @@
 
 import { escapeHtml } from './utils.js';
 
-const INTRO_SEEN_KEY = 'nexvora_intro_seen_session';
+const INTRO_SEEN_KEY = 'oqtriva_intro_seen_session';
 
 export const LIVE_CODE_SCENARIOS = [
   {
@@ -41,7 +41,7 @@ export const LIVE_CODE_SCENARIOS = [
         stepExplain: 'Safely acknowledges repeated webhook deliveries without re-triggering downstream database mutations.'
       },
       {
-        code: '    tx_id = <span class="tok-kw">await</span> bus.<span class="tok-fn">xadd_dag_stream</span>(<span class="tok-str">"nexvora:jobs"</span>, payload.<span class="tok-fn">dict</span>())',
+        code: '    tx_id = <span class="tok-kw">await</span> bus.<span class="tok-fn">xadd_dag_stream</span>(<span class="tok-str">"oqtriva:jobs"</span>, payload.<span class="tok-fn">dict</span>())',
         stepTitle: 'Step 06 // Persistent DAG Event Stream Append',
         stepExplain: 'Appends the validated task to a durable Redis Stream consumer group for asynchronous worker execution.'
       },
@@ -243,7 +243,7 @@ export class AnimationController {
       'Compiling FastAPI Async Gateway & Redis DAG Streams...',
       'Hydrating 60fps 3D Crystalline WebGL Projection Matrix...',
       'Binding Grounded AI RAG Vector Pipeline & RLS Policies...',
-      'Launching NEXVORA 3D Portfolio Environment...'
+      'Launching OQTRIVA 3D Portfolio Environment...'
     ];
 
     let idx = 0;

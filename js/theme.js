@@ -4,7 +4,7 @@
  * ==========================================================================
  */
 
-const USER_THEME_PREF_KEY = 'nexvora_user_theme_pref';
+const USER_THEME_PREF_KEY = 'oqtriva_user_theme_pref';
 
 export class ThemeController {
   constructor() {

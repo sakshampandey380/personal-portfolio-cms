@@ -1,6 +1,6 @@
 /* === STYLESHEET: css/tokens.css === */
 /* ==========================================================================
-   DESIGN TOKENS — SAKSHAM PANDEY | NEXVORA TECHNOLOGIES
+   DESIGN TOKENS — SAKSHAM PANDEY | OQTRIVA
    Predominantly warm pearl/alabaster light theme with charcoal typography,
    signature #F28C28 warm orange accent, dimensional shadows, and 3D depth.
    ========================================================================== */
@@ -1850,6 +1850,362 @@ code, pre, .mono {
   border-radius: var(--radius-lg);
   color: var(--text-secondary);
 }
+
+/* ==========================================================================
+   OQTRIVA FOOTER QR CARD & FROSTED-GLASS BANNER COMPONENTS
+   ========================================================================== */
+
+/* --- Column 1 High-Tech QR Access Card --- */
+.footer-qr-card {
+  margin-top: 1.15rem;
+  padding: 0.9rem 1rem;
+  background: rgba(18, 22, 34, 0.65);
+  border: 1px solid rgba(56, 182, 255, 0.25);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  transition: border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.footer-qr-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 12px 28px rgba(0, 212, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.footer-qr-card__thumb {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  padding: 3px;
+  border: 1px solid rgba(56, 182, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+}
+
+.footer-qr-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 3px;
+}
+
+.footer-qr-card__thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 212, 255, 0.25) 50%, transparent 100%);
+  animation: qrScanBeam 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes qrScanBeam {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.footer-qr-card__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-qr-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.footer-qr-card__tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--status-success);
+  box-shadow: 0 0 8px var(--status-success);
+  display: inline-block;
+}
+
+.footer-qr-card__desc {
+  font-size: 0.74rem;
+  line-height: 1.25;
+  color: var(--text-secondary);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.footer-qr-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.footer-qr-btn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all var(--duration-fast) ease;
+  text-decoration: none;
+}
+
+.footer-qr-btn:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #0b0d13;
+  transform: translateY(-1px);
+}
+
+/* --- Lowest Section OQTRIVA Frosted-Glass Blurred Banner --- */
+.footer-oqtriva-banner-wrap {
+  margin: 2.25rem 0 1.25rem;
+  position: relative;
+}
+
+.footer-oqtriva-banner-glass {
+  position: relative;
+  background: rgba(14, 18, 28, 0.68);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 182, 255, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.footer-oqtriva-banner-glass::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 140%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.12), transparent 55%),
+              radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.12), transparent 55%);
+  pointer-events: none;
+}
+
+.footer-oqtriva-banner-img-wrap {
+  position: relative;
+  flex-shrink: 0;
+  max-width: 290px;
+  width: 100%;
+}
+
+.footer-oqtriva-banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 58px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 14px rgba(0, 212, 255, 0.28));
+}
+
+.footer-oqtriva-banner-meta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: right;
+}
+
+.footer-oqtriva-tagline {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, #38b6ff 50%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-oqtriva-sub {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+@media (max-width: 768px) {
+  .footer-oqtriva-banner-glass {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.15rem 1.25rem;
+    gap: 1rem;
+  }
+  .footer-oqtriva-banner-img-wrap {
+    max-width: 220px;
+  }
+  .footer-oqtriva-banner-meta {
+    text-align: center;
+  }
+  .footer-qr-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-qr-card__thumb {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+/* --- QR Code Full Preview Modal --- */
+.qr-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.qr-modal.is-open {
+  display: flex;
+}
+
+.qr-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 10, 16, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.qr-modal__dialog {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid rgba(56, 182, 255, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 212, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: modalPopIn 0.28s var(--ease-out-expo) forwards;
+}
+
+@keyframes modalPopIn {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.qr-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.qr-modal__close:hover {
+  background: var(--status-danger);
+  border-color: var(--status-danger);
+  color: #fff;
+}
+
+.qr-modal__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.qr-modal__brand img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.qr-modal__brand span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.qr-modal__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.qr-modal__sub {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.qr-modal__qr-frame {
+  background: #ffffff;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(56, 182, 255, 0.4);
+  max-width: 220px;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.qr-modal__qr-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.qr-modal__actions {
+  display: flex;
+  gap: 0.65rem;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 
 
 /* === STYLESHEET: css/animations.css === */

@@ -10,7 +10,7 @@
  * policies verifying the authenticated administrator's JWT Bearer token.
  */
 
-const CONNECTION_CONFIG_KEY = 'nexvora_supabase_connection_v1';
+const CONNECTION_CONFIG_KEY = 'oqtriva_supabase_connection_v1';
 
 export class ApiService {
   constructor() {

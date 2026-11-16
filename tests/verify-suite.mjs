@@ -58,7 +58,7 @@ function test(name, fn) {
   }
 }
 
-console.log('\n=== NEXVORA 3D PORTFOLIO & ADMIN CMS — AUTOMATED QA SUITE ===\n');
+console.log('\n=== OQTRIVA 3D PORTFOLIO & ADMIN CMS — AUTOMATED QA SUITE ===\n');
 
 // 1. Required File Structure Verification
 test('All required HTML, CSS, JS, Admin, SQL, SVG, and PDF files exist', () => {
@@ -108,11 +108,12 @@ test('All required HTML, CSS, JS, Admin, SQL, SVG, and PDF files exist', () => {
     'backend/schema.sql',
     'backend/policies.sql',
     'backend/migrations/001_initial_setup.sql',
-    'assets/icons/favicon.svg',
-    'assets/icons/nexvora-logo.svg',
+    'assets/icons/oqtriva-icon.png',
+    'assets/icons/oqtriva-logo.svg',
     'assets/images/saksham-profile.png',
-    'assets/images/nexvora-card.jpg',
-    'assets/images/project-nexvora-mesh.svg',
+    'assets/images/oqtriva-banner.png',
+    'assets/images/oqtriva-portfolio-qr.png',
+    'assets/images/project-oqtriva-mesh.svg',
     'assets/images/project-synapse-ai.svg',
     'assets/images/project-hyperflux-rt.svg',
     'assets/images/project-aether-ui.svg',
@@ -151,7 +152,7 @@ test('sanitizeUrl blocks javascript: and data:text/html URIs', () => {
   assert.equal(sanitizeUrl('javascript:alert(1)'), '#');
   assert.equal(sanitizeUrl('data:text/html,<script>alert(1)</script>'), '#');
   assert.equal(sanitizeUrl('https://github.com/saksham'), 'https://github.com/saksham');
-  assert.equal(sanitizeUrl('assets/images/project-nexvora-mesh.svg'), 'assets/images/project-nexvora-mesh.svg');
+  assert.equal(sanitizeUrl('assets/images/project-oqtriva-mesh.svg'), 'assets/images/project-oqtriva-mesh.svg');
 });
 
 // 4. WhatsApp Normalization & Official wa.me Link Generation
@@ -176,9 +177,9 @@ test('buildWhatsAppUrl generates properly encoded official wa.me conversation li
 });
 
 // 5. Personal Brand & Seed Data Verification
-test('Seed data contains Saksham Pandey, NEXVORA TECHNOLOGIES, 4 resumes, and verified contact info', () => {
+test('Seed data contains Saksham Pandey, OQTRIVA, 4 resumes, and verified contact info', () => {
   assert.equal(SEED_DATA.profile.full_name, 'Saksham Pandey');
-  assert.equal(SEED_DATA.profile.brand_name, 'NEXVORA TECHNOLOGIES');
+  assert.equal(SEED_DATA.profile.brand_name, 'OQTRIVA');
   assert.equal(SEED_DATA.profile.email, 'pandeysaksham180@gmail.com');
   assert.equal(SEED_DATA.whatsapp_settings.phone_number, '919546748859');
   assert.ok(SEED_DATA.site_settings.footer_attribution.includes('Saksham Pandey'));
@@ -204,7 +205,7 @@ test('Unauthenticated calls to repository.getAdminData() or mutations throw Unau
 
 test('Authenticated Admin CRUD & Draft Isolation work across reloads', async () => {
   await repository.init();
-  authService.startLocalPreviewSession('saksham@nexvora.dev');
+  authService.startLocalPreviewSession('saksham@oqtriva.dev');
 
   // Create a draft project (published: false)
   await repository.upsertCollectionItem('projects', {

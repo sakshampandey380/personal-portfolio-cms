@@ -1,6 +1,6 @@
 # Quality Assurance & Verification Suite
 
-This directory contains the automated verification suite and manual QA checklist for **Saksham Pandey's 3D Personal Portfolio + Admin CMS (`NEXVORA TECHNOLOGIES`)**.
+This directory contains the automated verification suite and manual QA checklist for **Saksham Pandey's 3D Personal Portfolio + Admin CMS (`OQTRIVA`)**.
 
 ## Running the Automated Verification Suite
 

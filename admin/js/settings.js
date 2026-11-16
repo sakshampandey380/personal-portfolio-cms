@@ -618,7 +618,7 @@ export function renderSecurityModule(container, refreshView, confirmDelete) {
           <div style="margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--border-subtle);">
             <h3 style="font-size:0.95rem;color:var(--status-danger);margin-bottom:0.4rem;">Factory Seed Reset</h3>
             <p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:0.75rem;">
-              Restore all starter content for Saksham Pandey (NEXVORA TECHNOLOGIES). A rollback checkpoint will still be saved automatically before resetting.
+              Restore all starter content for Saksham Pandey (OQTRIVA). A rollback checkpoint will still be saved automatically before resetting.
             </p>
             <button type="button" id="resetSeedDataBtn" class="btn btn--secondary btn--sm" style="border-color:var(--status-danger);color:var(--status-danger);">
               Reset Repository to Starter Seed Data

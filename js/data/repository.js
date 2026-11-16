@@ -18,9 +18,9 @@ import { apiService } from '../services/api.js';
 import { authService } from '../services/auth.js';
 import { uid } from '../utils.js';
 
-const REPO_STORAGE_KEY = 'nexvora_portfolio_repository_v4';
-const SNAPSHOTS_STORAGE_KEY = 'nexvora_portfolio_snapshots_v4';
-const SYNC_CHANNEL_NAME = 'nexvora_cms_live_sync';
+const REPO_STORAGE_KEY = 'oqtriva_portfolio_repository_v1';
+const SNAPSHOTS_STORAGE_KEY = 'oqtriva_portfolio_snapshots_v1';
+const SYNC_CHANNEL_NAME = 'oqtriva_cms_live_sync';
 
 export class PortfolioRepository {
   constructor() {
@@ -336,7 +336,7 @@ export class PortfolioRepository {
    * Saves a visitor contact message (public submission with basic rate limit check).
    */
   async submitContactMessage(payload) {
-    const lastSubmit = Number(sessionStorage.getItem('nexvora_last_contact_ts') || 0);
+    const lastSubmit = Number(sessionStorage.getItem('oqtriva_last_contact_ts') || 0);
     if (Date.now() - lastSubmit < 8000) {
       throw new Error('Please wait a few seconds before submitting another message.');
     }
@@ -366,7 +366,7 @@ export class PortfolioRepository {
     }
     this.state.contact_messages.unshift(msgRecord);
     localStorage.setItem(REPO_STORAGE_KEY, JSON.stringify(this.state));
-    sessionStorage.setItem('nexvora_last_contact_ts', String(Date.now()));
+    sessionStorage.setItem('oqtriva_last_contact_ts', String(Date.now()));
 
     if (this.channel) {
       this.channel.postMessage({ type: 'STATE_UPDATED', timestamp: Date.now() });

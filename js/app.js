@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * MAIN PUBLIC PORTFOLIO ORCHESTRATOR — SAKSHAM PANDEY | NEXVORA TECHNOLOGIES
+ * MAIN PUBLIC PORTFOLIO ORCHESTRATOR — SAKSHAM PANDEY | OQTRIVA
  * ==========================================================================
  * Supports multi-page architecture (index.html, about.html, projects.html,
  * contact.html) as well as unified single-page sections, with ambient 3D
@@ -18,7 +18,7 @@ import { skillsController } from './skills.js';
 import { projectsController } from './projects.js';
 import { resumesController } from './resumes.js';
 import { contactController } from './contact.js';
-import { escapeHtml, sanitizeUrl, formatDate } from './utils.js';
+import { escapeHtml, sanitizeUrl, formatDate, showToast } from './utils.js';
 
 class PortfolioApp {
   constructor() {
@@ -54,7 +54,7 @@ class PortfolioApp {
 
     banner.innerHTML = `
       <span class="sync-banner__dot" style="background:var(--status-success);box-shadow:0 0 8px var(--status-success);"></span>
-      <span><strong>NexVora Technologies:</strong> Empowering the Future Through Technology · Ranchi, India · Available Worldwide</span>
+      <span><strong>Oqtriva:</strong> Build Beyond Boundaries · Ranchi, India · Available Worldwide</span>
     `;
   }
 
@@ -86,7 +86,7 @@ class PortfolioApp {
     const page = navigationController.detectCurrentPage();
     const baseTitle =
       seo.site_title ||
-      `${profile.full_name || 'Saksham Pandey'} | ${profile.brand_name || 'NexVora Technologies'}`;
+      `${profile.full_name || 'Saksham Pandey'} | ${profile.brand_name || 'Oqtriva'}`;
 
     if (page === 'about.html') {
       document.title = `About & Agency Services — ${baseTitle}`;
@@ -116,17 +116,17 @@ class PortfolioApp {
       if (el && val !== undefined) el.textContent = val;
     };
 
-    setText('heroEyebrow', hero.eyebrow || `${profile.brand_name || 'NEXVORA TECHNOLOGIES'} // STUDIO`);
+    setText('heroEyebrow', hero.eyebrow || `${profile.brand_name || 'OQTRIVA'} // STUDIO`);
     setText('heroTitlePrefix', hero.title_prefix || 'Engineering Dimensional,');
     setText('heroTitleHighlight', hero.title_highlight || 'High-Throughput');
     setText('heroTitleSuffix', hero.title_suffix || 'Digital Systems.');
     setText('heroHeadlineText', `${profile.full_name || 'Saksham Pandey'} — ${profile.headline || ''}`);
     setText('heroSubtitleText', hero.subtitle || profile.short_bio || '');
     setText('heroMetaLocation', profile.location || 'Ranchi, Jharkhand, India');
-    setText('heroMetaBrand', profile.brand_name || 'NEXVORA TECHNOLOGIES');
+    setText('heroMetaBrand', profile.brand_name || 'OQTRIVA');
     setText('heroMetaRelocation', profile.relocation_preference || 'Global Remote & India');
 
-    setText('spatialTopLabel', hero.telemetry_top_label || 'NEXVORA STUDIO');
+    setText('spatialTopLabel', hero.telemetry_top_label || 'OQTRIVA STUDIO');
     setText('spatialTopValue', hero.telemetry_top_value || 'AI · Web · ERP · CRM');
     setText('spatialBottomLabel', hero.telemetry_bottom_label || 'PRIMARY STACK');
     setText('spatialBottomValue', hero.telemetry_bottom_value || 'TS · Python · FastAPI · Node');
@@ -169,7 +169,7 @@ class PortfolioApp {
         { label: 'Core Engineering Strengths', text: about.professional_strengths },
         { label: 'Working Philosophy', text: about.working_style },
         {
-          label: 'Current Focus & NexVora Vision',
+          label: 'Current Focus & Oqtriva Vision',
           text: `${about.current_focus || ''} ${about.career_goals || ''}`.trim()
         }
       ].filter((b) => b.text);
@@ -246,7 +246,7 @@ class PortfolioApp {
         <article class="card-3d service-agency-card">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
             <span class="badge badge--accent">${escapeHtml(srv.code)}</span>
-            <span class="mono" style="font-size:0.72rem;color:var(--text-muted);">NEXVORA SOLUTIONS</span>
+            <span class="mono" style="font-size:0.72rem;color:var(--text-muted);">OQTRIVA SOLUTIONS</span>
           </div>
           <h3 style="font-size:1.18rem;margin-bottom:0.5rem;overflow-wrap:break-word;">${escapeHtml(srv.title)}</h3>
           <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.1rem;overflow-wrap:break-word;">${escapeHtml(srv.description)}</p>
@@ -269,7 +269,7 @@ class PortfolioApp {
     previewGrid.innerHTML = list
       .map((proj) => {
         const stack = Array.isArray(proj.tech_stack) ? proj.tech_stack : [];
-        const cover = sanitizeUrl(proj.cover_image || 'assets/images/project-nexvora-mesh.svg');
+        const cover = sanitizeUrl(proj.cover_image || 'assets/images/project-oqtriva-mesh.svg');
         return `
           <article class="card-3d project-card">
             <div class="project-card__media">
@@ -476,12 +476,12 @@ class PortfolioApp {
     };
 
     setText('footerBrandName', profile.full_name || 'Saksham Pandey');
-    setText('footerCompanySub', profile.brand_name || 'NEXVORA TECHNOLOGIES');
+    setText('footerCompanySub', profile.brand_name || 'OQTRIVA');
     setText('footerTagline', siteSettings.footer_tagline || profile.short_bio || '');
-    setText('footerAttribution', siteSettings.footer_attribution || 'Designed and engineered by Saksham Pandey · NexVora Technologies.');
+    setText('footerAttribution', siteSettings.footer_attribution || 'Designed and engineered by Saksham Pandey · Oqtriva.');
     setText('footerPrivacyNotice', siteSettings.privacy_notice || '');
     setText('footerYear', String(new Date().getFullYear()));
-    setText('footerCopyrightHolder', siteSettings.copyright_holder || 'Saksham Pandey · NEXVORA TECHNOLOGIES');
+    setText('footerCopyrightHolder', siteSettings.copyright_holder || 'Saksham Pandey · OQTRIVA');
 
     const footerNav = document.getElementById('footerNavLinks');
     if (footerNav) {
@@ -508,6 +508,66 @@ class PortfolioApp {
             `<li><a href="${escapeHtml(sanitizeUrl(s.url))}" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);font-size:0.9rem;overflow-wrap:break-word;">${escapeHtml(s.platform)} ↗</a></li>`
         )
         .join('');
+    }
+
+    this.initQrShareInteractions();
+  }
+
+  initQrShareInteractions() {
+    const copyBtn = document.getElementById('copyShareLinkBtn');
+    if (copyBtn && !copyBtn.dataset.bound) {
+      copyBtn.dataset.bound = 'true';
+      copyBtn.addEventListener('click', async () => {
+        const shareUrl = window.location.href.split('#')[0];
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(shareUrl);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = shareUrl;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (typeof window.showToast === 'function') {
+            window.showToast('Portfolio link copied to clipboard! Share anywhere.', 'success');
+          } else {
+            alert('Portfolio link copied to clipboard!');
+          }
+        } catch (err) {
+          console.warn('Clipboard write failed:', err);
+        }
+      });
+    }
+
+    const qrThumb = document.getElementById('footerQrThumbBtn');
+    const qrModal = document.getElementById('qrPreviewModal');
+    const closeQrBtn = document.getElementById('closeQrModalBtn');
+
+    if (qrThumb && qrModal && !qrThumb.dataset.bound) {
+      qrThumb.dataset.bound = 'true';
+      const openModal = () => {
+        qrModal.classList.add('is-open');
+        qrModal.setAttribute('aria-hidden', 'false');
+      };
+      const closeModal = () => {
+        qrModal.classList.remove('is-open');
+        qrModal.setAttribute('aria-hidden', 'true');
+      };
+
+      qrThumb.addEventListener('click', openModal);
+      if (closeQrBtn) closeQrBtn.addEventListener('click', closeModal);
+      qrModal.addEventListener('click', (e) => {
+        if (e.target === qrModal || e.target.classList.contains('qr-modal__backdrop')) {
+          closeModal();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && qrModal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
     }
   }
 }

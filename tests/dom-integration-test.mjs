@@ -242,7 +242,7 @@ const loginIds = [
 assertIdsExist(loginHtml, loginIds, 'admin/login.html');
 console.log(`  ✓ Verified all ${loginIds.length} Authentication hooks in admin/login.html`);
 
-// 9. Verify Public Pages Have ZERO Links to Admin Section
+// 9. Verify Public Pages Have ZERO Links to Admin Section & 100% OQTRIVA Branding
 for (const [name, content] of [
   ['index.html', indexHtml],
   ['about.html', aboutHtml],
@@ -251,6 +251,8 @@ for (const [name, content] of [
 ]) {
   assert.ok(!content.includes('admin/index.html'), `Public page ${name} must not link to admin/index.html`);
   assert.ok(!content.includes('Open Admin Dashboard'), `Public page ${name} must not show Open Admin Dashboard button`);
-  assert.ok(!/nextvora/i.test(content), `Public page ${name} must use NexVora spelling, not NextVora`);
+  assert.ok(!/nexvora|nextvora/i.test(content), `Public page ${name} must use OQTRIVA branding, not NexVora`);
+  assert.ok(content.includes('footer-oqtriva-banner-glass'), `Public page ${name} must include the frosted-glass blurred OQTRIVA banner in footer`);
+  assert.ok(content.includes('oqtriva-portfolio-qr.png'), `Public page ${name} must include the OQTRIVA QR code`);
 }
-console.log('  ✓ Verified zero Admin CMS links and 100% NexVora spelling across all public HTML pages\n');
+console.log('  ✓ Verified zero Admin CMS links, OQTRIVA branding, blurred footer banner, and QR code across all public HTML pages\n');

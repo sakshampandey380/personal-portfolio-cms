@@ -111,7 +111,7 @@ export class ProjectsController {
     grid.innerHTML = filtered
       .map((proj) => {
         const stack = Array.isArray(proj.tech_stack) ? proj.tech_stack : [];
-        const cover = sanitizeUrl(proj.cover_image || 'assets/images/project-nexvora-mesh.svg');
+        const cover = sanitizeUrl(proj.cover_image || 'assets/images/project-oqtriva-mesh.svg');
         return `
           <article class="card-3d project-card" data-project-id="${escapeHtml(proj.id)}">
             <div class="project-card__media">
@@ -250,7 +250,7 @@ export class ProjectsController {
     const stack = Array.isArray(proj.tech_stack) ? proj.tech_stack : [];
     const screenshots = Array.isArray(proj.screenshots) && proj.screenshots.length > 0
       ? proj.screenshots
-      : [proj.cover_image || 'assets/images/project-nexvora-mesh.svg'];
+      : [proj.cover_image || 'assets/images/project-oqtriva-mesh.svg'];
 
     bodyEl.innerHTML = `
       <div style="display:flex;flex-direction:column;gap:1.5rem;">

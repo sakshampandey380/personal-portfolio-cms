@@ -4,7 +4,7 @@
  * ==========================================================================
  * Features:
  * - Multi-page navigation (index.html, about.html, projects.html, contact.html)
- * - NexVora Technologies branding header
+ * - Oqtriva branding header
  * - Centralized "Teleport Drop-In" transition: a code glyph/bracket icon (< />)
  *   explodes outward from the center on page/route changes, followed by a
  *   snappy teleport drop-in reveal for incoming page content.
@@ -37,7 +37,7 @@ export class NavigationController {
     const brandSubEl = document.getElementById('navBrandSub');
 
     if (brandNameEl) brandNameEl.textContent = profile.full_name || 'Saksham Pandey';
-    if (brandSubEl) brandSubEl.textContent = profile.brand_name || 'NEXVORA TECHNOLOGIES';
+    if (brandSubEl) brandSubEl.textContent = profile.brand_name || 'OQTRIVA';
 
     const defaultPages = [
       { id: 'home', label: 'Home', href: 'index.html', visible: true, order: 1 },
@@ -114,7 +114,7 @@ export class NavigationController {
           <span class="teleport-overlay__slash">/</span>
           <span class="teleport-overlay__bracket teleport-overlay__bracket--right">&gt;</span>
           <div class="teleport-overlay__ring"></div>
-          <span class="teleport-overlay__label">NEXVORA // TELEPORT ROUTE</span>
+          <span class="teleport-overlay__label">OQTRIVA // TELEPORT ROUTE</span>
         </div>
       `;
       document.body.appendChild(overlay);
@@ -129,8 +129,8 @@ export class NavigationController {
 
     let triggeredFromNav = false;
     try {
-      triggeredFromNav = sessionStorage.getItem('nexvora_teleport_active') === '1';
-      sessionStorage.removeItem('nexvora_teleport_active');
+      triggeredFromNav = sessionStorage.getItem('oqtriva_teleport_active') === '1';
+      sessionStorage.removeItem('oqtriva_teleport_active');
     } catch {
       // Ignore storage errors on restricted file:// origins
     }
@@ -166,7 +166,7 @@ export class NavigationController {
     const mainEl = document.getElementById('mainContent') || document.querySelector('main');
 
     try {
-      sessionStorage.setItem('nexvora_teleport_active', '1');
+      sessionStorage.setItem('oqtriva_teleport_active', '1');
     } catch {
       // Ignore
     }

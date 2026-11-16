@@ -1,5 +1,5 @@
 -- ==========================================================================
--- POSTGRESQL SCHEMA — SAKSHAM PANDEY | NEXVORA TECHNOLOGIES PORTFOLIO & CMS
+-- POSTGRESQL SCHEMA — SAKSHAM PANDEY | OQTRIVA PORTFOLIO & CMS
 -- Target Database: Supabase (PostgreSQL 15+)
 -- ==========================================================================
 
@@ -17,8 +17,8 @@ create table if not exists public.portfolio_state (
 create table if not exists public.profile (
   id text primary key default 'profile_main',
   full_name text not null,
-  brand_name text default 'NEXVORA TECHNOLOGIES',
-  monogram text default 'SP',
+  brand_name text default 'OQTRIVA',
+  monogram text default 'OQ',
   headline text not null,
   short_bio text,
   location text default 'India',
@@ -38,9 +38,9 @@ create table if not exists public.site_settings (
   navigation_settings jsonb not null default '{}'::jsonb,
   seo_settings jsonb not null default '{}'::jsonb,
   footer_tagline text,
-  footer_attribution text default 'Designed and developed by Saksham Pandey.',
+  footer_attribution text default 'Designed and developed by Saksham Pandey · OQTRIVA.',
   privacy_notice text,
-  copyright_holder text default 'Saksham Pandey · NEXVORA TECHNOLOGIES',
+  copyright_holder text default 'Saksham Pandey · OQTRIVA',
   updated_at timestamptz not null default now()
 );
 
